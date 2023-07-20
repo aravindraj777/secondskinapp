@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+    body {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ4ia5LkuCRW8Y4cnBTBujf6AlUkaPMsz_Gw&usqp=CAU');
+    }
+    .bg-light {
+    background-color: #f8f9fa0d!important;
+}
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h2 class="text-center mb-4 text-white">Sign in</h2>
+                    <form th:action="@{/login}" method="post" class="login-background">
+                        <div class="mb-3 ml-5 mr-5">
+                            <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+                        </div>
+                        <div class="mb-3 ml-5 mr-5">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+                        </div>
+                        <div class="mb-3 pl-5 pr-5">
+                            <button type="submit" value="Login" class="btn btn-success w-100">Login</button>
+                        </div>
+                        <p th:if="${param.error}" class="text-danger text-center">User name or Password Incorrect!!!</p>
+                        <p class="text-center text-white">Don't have an account? <a href="/signup">Register here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>

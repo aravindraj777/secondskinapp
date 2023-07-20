@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Edit User</h2>
+          <form th:action="@{/adminpanel/update}" method="post">
+            <input type="hidden" th:field="${user.id}">
+            <div class="mb-3 ml-5 mr-5">
+              <input type="text" th:field="${user.username}" class="form-control" placeholder="Username" required="required">
+            </div>
+            <div class="mb-3 ml-5 mr-5">
+              <input type="email" th:field="${user.email}" class="form-control" placeholder="Email" required="required">
+            </div>
+
+            <div class="mb-3 text-center">
+              <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
